@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1200" role="img" aria-label="Dark old-growth forest canopy with filtered green light">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#15231A"/>
+      <stop offset="42%" stop-color="#0E1711"/>
+      <stop offset="100%" stop-color="#060B08"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="18%" r="54%">
+      <stop offset="0%" stop-color="#7BC98B" stop-opacity="0.42"/>
+      <stop offset="32%" stop-color="#45A066" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#0E1310" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="bark">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018 0.11" numOctaves="4" seed="9"/>
+      <feColorMatrix type="saturate" values="0.2"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.35"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1800" height="1200" fill="url(#sky)"/>
+  <rect width="1800" height="1200" fill="url(#glow)"/>
+  <path d="M-90 276 C172 204 324 246 494 156 C706 42 1032 86 1238 178 C1432 264 1628 166 1908 246 L1908 -40 L-90 -40 Z" fill="#101C14" opacity="0.84"/>
+  <path d="M-88 376 C128 284 320 342 478 258 C690 146 920 174 1118 264 C1344 366 1532 254 1892 312 L1892 -20 L-88 -20 Z" fill="#0B130E" opacity="0.92"/>
+  <g opacity="0.48" filter="url(#soft)">
+    <ellipse cx="850" cy="214" rx="360" ry="128" fill="#6CB57B"/>
+    <ellipse cx="1170" cy="316" rx="280" ry="92" fill="#B7B38A" opacity="0.38"/>
+  </g>
+  <g opacity="0.8">
+    <path d="M120 1180 C118 936 136 668 100 396 C84 274 106 140 148 -24 L214 -24 C186 150 196 278 214 404 C252 654 230 916 256 1180 Z" fill="#08100B"/>
+    <path d="M280 1180 C298 896 286 616 310 360 C322 232 354 112 404 -24 L480 -24 C430 118 410 236 402 372 C382 686 426 928 390 1180 Z" fill="#0B130E"/>
+    <path d="M725 1180 C690 890 710 642 724 382 C732 228 720 98 686 -24 L780 -24 C818 116 826 274 812 426 C788 700 800 914 836 1180 Z" fill="#08100B"/>
+    <path d="M1055 1180 C1010 902 1018 704 1048 468 C1074 266 1062 124 1008 -24 L1110 -24 C1168 144 1180 324 1138 516 C1094 720 1126 926 1190 1180 Z" fill="#0A100C"/>
+    <path d="M1430 1180 C1398 892 1408 674 1434 424 C1450 266 1438 120 1394 -24 L1496 -24 C1538 144 1556 306 1536 468 C1504 718 1540 934 1612 1180 Z" fill="#070D09"/>
+    <path d="M1664 1180 C1618 870 1644 670 1678 408 C1696 264 1680 112 1630 -24 L1726 -24 C1788 156 1802 336 1758 538 C1720 716 1760 940 1830 1180 Z" fill="#0B130E"/>
+  </g>
+  <rect width="1800" height="1200" filter="url(#bark)" opacity="0.7"/>
+  <g opacity="0.32">
+    <path d="M0 806 C200 710 348 766 516 674 C694 576 880 610 1024 700 C1206 814 1408 700 1800 756 L1800 1200 L0 1200 Z" fill="#111B12"/>
+    <path d="M0 920 C246 848 440 926 628 838 C814 750 1000 792 1152 884 C1322 986 1536 884 1800 914 L1800 1200 L0 1200 Z" fill="#08100B"/>
+  </g>
+</svg>

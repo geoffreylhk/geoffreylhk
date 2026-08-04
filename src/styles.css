@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #dde9d6;
+  background: #0e1310;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(69, 160, 102, 0.16), transparent 31rem),
+    radial-gradient(circle at 82% 28%, rgba(183, 179, 138, 0.1), transparent 28rem),
+    linear-gradient(180deg, #0e1310 0%, #0a110d 45%, #0e1310 100%);
+  color: #dde9d6;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(69, 160, 102, 0.42);
+  color: #f5ffe8;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.forest-noise::before {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 86%);
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+}
+
+.tilt-depth {
+  transform: translateZ(34px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
