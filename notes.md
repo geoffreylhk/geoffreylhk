@@ -7,11 +7,11 @@ git push
 
 ## Connect local folder to GitHub (one time setup, already done)
 git init
-git remote add origin https://github.com/geoffreylhk/bccsrtool.git
+git remote add origin https://github.com/geoffreylhk/geoffreylhk.git
 git pull origin main
 
 ## Live site
-https://geoffreylhk.github.io/bccsrtool
+https://geoffreylhk.github.io/geoffreylhk
 
 ## Useful shortcuts
 Ctrl + Shift + ` — open terminal in VS Code
