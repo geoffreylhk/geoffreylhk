@@ -7,102 +7,165 @@
     <link rel="icon" type="image/svg+xml" href="public/favicon.svg?v=3" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <title>Geoffrey Hong Kei Lee</title>
   </head>
-  <body>
-    <div class="forest-noise"></div>
-    <div class="organic-blobs" aria-hidden="true">
-      <svg class="blob blob-one" viewBox="0 0 280 280"><path d="M146.2 20.8C191.8 26.7 221.7 75.7 224.1 121.5C226.6 167.4 201.4 210 159.3 227.7C117.2 245.4 58.2 238.3 28.2 201.5C-1.8 164.6 -2.8 98.1 29.8 57.9C62.5 17.7 100.7 14.9 146.2 20.8Z" /></svg>
-      <svg class="blob blob-two" viewBox="0 0 280 280"><path d="M179.3 32.3C224.7 60.3 247.4 126 227.6 181.4C207.9 236.8 145.7 281.9 90.5 268.4C35.4 254.8 -12.8 182.7 4.5 127.1C21.8 71.6 104 32.6 179.3 32.3Z" /></svg>
-      <svg class="blob blob-three" viewBox="0 0 280 280"><path d="M139.2 7.6C188.9 10.6 242.8 43 252.3 91.8C261.8 140.5 226.9 205.6 174.2 226.7C121.5 247.9 51.1 225.1 21.6 178.6C-7.9 132.2 3.4 62.2 43.9 27C84.4 -8.2 89.5 4.6 139.2 7.6Z" /></svg>
-    </div>
+  <body id="top">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <nav class="site-nav frame" aria-label="Primary navigation">
+        <a class="brand" href="#top">
+          <img src="public/favicon.svg?v=3" width="42" height="42" alt="" />
+          <span>Geoffrey Lee</span>
+        </a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Work</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
 
-    <nav class="floating-nav" aria-label="Primary navigation">
-      <a class="pill nav-home" href="#top">GHL</a>
-      <div class="nav-links">
-        <a class="pill" href="#skills">Skills</a>
-        <a class="pill" href="#projects">Projects</a>
-        <a class="pill" href="#experience">Experience</a>
-        <a class="pill primary" href="#contact">Contact</a>
-      </div>
-    </nav>
-
-    <main>
-      <section class="hero" id="top">
-        <div class="hero-bg"></div>
-        <div class="hero-shade"></div>
-        <div class="hero-glow"></div>
-        <div class="mouse-glow" aria-hidden="true"></div>
-        <div class="hero-content reveal-group">
-          <div class="tag-row reveal">
-            <span class="pill accent">Environmental Scientist</span>
-            <span class="pill accent">Field Researcher</span>
-            <span class="pill accent">Developer</span>
+    <main id="main-content">
+      <section class="hero frame" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="hero-name">Geoffrey Hong Kei Lee</p>
+          <h1 id="hero-title">Environmental science.<br />Practical tools.</h1>
+          <p class="hero-copy">I turn field observations and environmental data into tools for clearer decisions.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">Explore my work</a>
+            <a class="text-link" href="#contact">Get in touch</a>
           </div>
-          <h1 class="reveal">Geoffrey Hong Kei Lee</h1>
-          <p class="hero-copy reveal">Environmental scientist and developer in Vancouver, BC, building practical tools for contaminated sites, field monitoring, and spatial risk decisions.</p>
-          <div class="cta-row reveal">
-            <a class="button primary" href="#projects">View projects <span aria-hidden="true">↗</span></a>
-            <a class="button ghost" href="mailto:geoffreylhk@gmail.com">Contact Geoffrey <span aria-hidden="true">✉</span></a>
+          <p class="hero-location">Vancouver, BC</p>
+        </div>
+        <div class="hero-visual">
+          <img src="public/portfolio/hero-woodland-path.png" alt="Sunlight filtering through trees onto a woodland path" width="728" height="1092" fetchpriority="high" />
+        </div>
+      </section>
+
+      <section class="section frame about" id="about" aria-labelledby="about-title">
+        <div>
+          <h2 id="about-title">From the field to the screen.</h2>
+          <p>My work connects environmental assessment, field monitoring, spatial analysis, and development. I’m interested in making field data easier to interpret and use.</p>
+          <p>Simon Fraser University · Resource and Environmental Management</p>
+          <ul class="capabilities" id="skills" aria-label="Capabilities">
+            <li>Assessment</li>
+            <li>GIS &amp; data</li>
+            <li>Field ecology</li>
+            <li>Development</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section frame work" id="projects" aria-labelledby="work-title">
+        <h2 id="work-title">My work</h2>
+        <article class="featured-project">
+          <a class="project-media" href="https://bccsrtool.ca/" aria-label="Open the BC CSR Tool">
+            <img src="public/portfolio/bc-csr-tool.webp" width="1600" height="860" alt="BC CSR Screening Tool home screen showing the four assessment steps" />
+          </a>
+          <div class="project-copy">
+            <h3>BC CSR Tool</h3>
+            <p>A screening tool that compares soil and groundwater lab results against BC CSR Schedule 3.1 thresholds.</p>
+            <p class="project-meta">Environmental assessment · Web development</p>
+            <a class="text-link" href="https://bccsrtool.ca/">Explore the tool <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="meta-row reveal">
-            <span>Vancouver, BC</span>
-            <span>Simon Fraser University</span>
+        </article>
+
+        <div class="supporting-projects">
+          <article>
+            <img class="supporting-image" src="public/portfolio/esa-placeholder.webp" width="768" height="512" loading="lazy" alt="" />
+            <p class="media-caption">Illustrative image</p>
+            <h3>Phase I ESA</h3>
+            <p>Reconstructed the history of a brownfield site, mapped areas of potential environmental concern, and developed a conceptual site model.</p>
+            <p class="project-meta">Environmental assessment · GIS</p>
+          </article>
+          <article>
+            <img class="supporting-image" src="public/portfolio/salmon-placeholder.webp" width="768" height="512" loading="lazy" alt="" />
+            <p class="media-caption">Illustrative image</p>
+            <h3>Salmon modelling</h3>
+            <p>Used 40 years of Pacific salmon data to model population responses across dam and habitat scenarios.</p>
+            <p class="project-meta">Resource management · Modelling</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section frame journey" id="experience" aria-labelledby="journey-title">
+        <header class="journey-heading">
+          <h2 id="journey-title">My journey</h2>
+          <div class="journey-tabs" role="tablist" aria-label="Journey timeline">
+            <button type="button" role="tab" id="journey-education-tab" aria-controls="journey-education" aria-selected="false" tabindex="-1"><svg class="journey-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9.5 12 5l10 4.5-10 4.5L2 9.5Z"/><path d="M6 11.4v4.8c2.8 2.5 9.2 2.5 12 0v-4.8M22 10v5"/></svg>Education</button>
+            <button type="button" role="tab" id="journey-experience-tab" aria-controls="journey-experience" aria-selected="true" tabindex="0"><svg class="journey-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18m-11 0v2h4v-2"/></svg>Experience</button>
           </div>
+        </header>
+        <div id="journey-experience" role="tabpanel" tabindex="0" aria-labelledby="journey-experience-tab">
+          <ol class="journey-rail">
+            <li><div class="journey-entry">
+              <div class="journey-meta"><img class="journey-logo" src="public/portfolio/earls-logo.png" width="50" height="32" alt="" loading="lazy" /><span><time datetime="2026-10">Oct 2026</time> – Present</span></div>
+              <h3>Line Cook</h3>
+              <p class="journey-org">Earls Kitchen + Bar · Part-time</p>
+              <p class="journey-note">Vancouver, BC</p>
+            </div></li>
+            <li><div class="journey-entry">
+              <div class="journey-meta"><img class="journey-logo" src="public/portfolio/stanley-park-ecology-logo.png" width="50" height="32" alt="" loading="lazy" /><span><time datetime="2026-07">Jul 2026</time> – Present</span></div>
+              <h3>Wildlife Monitoring Assistant</h3>
+              <p class="journey-org">Stanley Park Ecology</p>
+              <p class="journey-note">Monitored beaver activity at Beaver Lake and Lost Lagoon and helped maintain bog habitat.</p>
+            </div></li>
+            <li><div class="journey-entry">
+              <div class="journey-meta"><img class="journey-logo" src="public/portfolio/bc-csr-tool-logo.png" width="50" height="32" alt="" loading="lazy" /><span><time datetime="2026-05">May 2026</time> – Present</span></div>
+              <h3>Founder</h3>
+              <p class="journey-org">BC CSR Tool · Self-employed</p>
+              <p class="journey-note">Built a tool to compare soil and groundwater lab results against BC CSR Schedule 3.1 thresholds.</p>
+            </div></li>
+            <li><div class="journey-entry">
+              <div class="journey-meta"><img class="journey-logo" src="public/portfolio/stanley-park-ecology-logo.png" width="50" height="32" alt="" loading="lazy" /><span><time datetime="2026-04">Apr</time> – <time datetime="2026-10">Oct 2026</time></span></div>
+              <h3>Environmental Restoration Technician</h3>
+              <p class="journey-org">Stanley Park Ecology</p>
+              <p class="journey-note">Surveyed and removed invasive plants and monitored restoration sites in Stanley Park.</p>
+            </div></li>
+            <li><div class="journey-entry">
+              <div class="journey-meta"><span class="journey-icon journey-emoji" aria-hidden="true">🔍</span><span><time datetime="2026-05">May</time> – <time datetime="2026-08">Aug 2026</time></span></div>
+              <h3>Data Collection Specialist</h3>
+              <p class="journey-org">Engaging Minds Consulting Ltd. · Seasonal</p>
+              <p class="journey-note">Recorded water restriction compliance with ArcGIS Survey123 and helped map 322 routes across 12 municipalities.</p>
+            </div></li>
+            <li><div class="journey-entry">
+              <div class="journey-meta"><span class="journey-icon journey-emoji" aria-hidden="true">📊</span><span><time datetime="2020-03">Mar 2020</time> – <time datetime="2022-06">Jun 2022</time></span></div>
+              <h3>Founder &amp; Operations Manager</h3>
+              <p class="journey-org">E-commerce · Self-employed</p>
+              <p class="journey-note">Ran an independent business and built Excel dashboards to track inventory and sales.</p>
+            </div></li>
+            <li><div class="journey-entry">
+              <div class="journey-meta"><img class="journey-logo" src="public/portfolio/hku-lsr-logo.png" width="50" height="32" alt="" loading="lazy" /><span><time datetime="2020-04">Apr</time> – <time datetime="2020-07">Jul 2020</time></span></div>
+              <h3>Research Assistant</h3>
+              <p class="journey-org">HKU Laboratory for Space Research · Internship</p>
+              <p class="journey-note">Reviewed research to inform experimental design and kept project documentation organized.</p>
+            </div></li>
+          </ol>
+        </div>
+        <div id="journey-education" role="tabpanel" tabindex="0" aria-labelledby="journey-education-tab" hidden>
+          <ol class="journey-rail">
+            <li><div class="journey-entry">
+              <div class="journey-meta"><img class="journey-sfu" src="public/portfolio/sfu-logo.png" width="52" height="26" alt="" /><span><time datetime="2021-09">Sep 2021</time> – <time datetime="2026-04">Apr 2026</time></span></div>
+              <h3>Bachelor of Environment</h3>
+              <p class="journey-org">Simon Fraser University</p>
+              <p class="journey-note">Resource and Environmental Management</p>
+            </div></li>
+          </ol>
         </div>
       </section>
 
-      <section class="section reveal-group" id="skills">
-        <p class="eyebrow reveal">Technical capabilities</p>
-        <h2 class="reveal">Environmental assessment, spatial analysis, and field-ready data systems.</h2>
-        <div class="skill-grid">
-          <article class="skill-group reveal"><h3>Assessment</h3><div class="tag-row stagger-tags"><span class="pill muted">Phase I &amp; II ESA</span><span class="pill muted">Brownfield assessment</span><span class="pill muted">HHRA</span><span class="pill muted">Conceptual site model (CSM)</span><span class="pill muted">Site delineation</span><span class="pill muted">Environmental reporting</span></div></article>
-          <article class="skill-group reveal"><h3>Regulatory Risk</h3><div class="tag-row stagger-tags"><span class="pill muted">BC CSR</span><span class="pill muted">CCME guidelines</span><span class="pill muted">Hazard quotient</span><span class="pill muted">Spatial risk mapping</span><span class="pill muted">WHMIS</span><span class="pill muted">Transportation of Dangerous Goods (TDG)</span></div></article>
-          <article class="skill-group reveal"><h3>GIS and Data</h3><div class="tag-row stagger-tags"><span class="pill muted">Buffer analysis</span><span class="pill muted">Overlay analysis</span><span class="pill muted">Historical aerial imagery interpretation</span><span class="pill muted">ArcGIS Survey123</span><span class="pill muted">RStudio (Ricker modelling, QA/QC)</span><span class="pill muted">Excel (KPI dashboards)</span></div></article>
-          <article class="skill-group reveal"><h3>Field Ecology</h3><div class="tag-row stagger-tags"><span class="pill muted">Invasive species identification</span><span class="pill muted">Field monitoring</span><span class="pill muted">Habitat recovery tracking</span><span class="pill muted">Native/invasive plant ID</span></div></article>
-        </div>
-      </section>
-
-      <section class="section reveal-group" id="projects">
-        <p class="eyebrow reveal">Selected projects</p>
-        <h2 class="reveal">Tools and models built where environmental science meets practical decisions.</h2>
-        <div class="project-grid">
-          <article class="project-card featured reveal"><div class="project-inner"><div class="tag-row"><span class="pill accent">Featured</span><span class="pill muted">Live at bccsrtool.ca</span></div><div class="project-heading"><div><h3>BC CSR Tool</h3><p>A focused web tool that streamlines Phase I &amp; II ESA workflows through contaminant threshold logic for soil and groundwater pathways.</p></div><a class="icon-button" href="https://bccsrtool.ca" target="_blank" rel="noreferrer" aria-label="Open BC CSR Tool">↗</a></div><div class="tag-row"><span class="pill muted">HTML/CSS/JS</span><span class="pill muted">GitHub</span><span class="pill muted">BC CSR Schedule 3.1</span></div><ul><li>Implements CSR threshold logic for contaminant comparison against BC standards.</li><li>Includes a Phase II data input module for comparing field results against CSR standards.</li><li>Built for faster environmental screening, reporting, and defensible early assessment.</li></ul></div></article>
-          <article class="project-card reveal"><div class="project-inner"><div class="tag-row"><span class="pill accent">Environmental Assessment</span><span class="pill muted">Jan-Apr 2026</span></div><h3>Phase I ESA &amp; Brownfield Redevelopment</h3><p>Phase I ESA for a residential condo redevelopment with APEC identification and a source-pathway-receptor model.</p><div class="tag-row"><span class="pill muted">BC CSR</span><span class="pill muted">Historical imagery</span><span class="pill muted">CSM</span><span class="pill muted">Risk map</span></div><ul><li>Identified 3 APECs using historical aerial imagery interpretation.</li><li>Built a conceptual site model and spatial risk map for redevelopment planning.</li></ul></div></article>
-          <article class="project-card reveal"><div class="project-inner"><div class="tag-row"><span class="pill accent">Quantitative Ecology</span><span class="pill muted">Sep-Dec 2025</span></div><h3>Salmon Dam Modelling</h3><p>Cleaned 40 years of Pacific salmon data and modelled population response across dam and habitat scenarios.</p><div class="tag-row"><span class="pill muted">RStudio</span><span class="pill muted">Ricker Model</span><span class="pill muted">QA/QC</span><span class="pill muted">MSY</span></div><ul><li>Ran 5 dam scenarios across 5 habitat effect levels.</li><li>Produced quantitative maximum sustainable yield predictions.</li></ul></div></article>
-        </div>
-      </section>
-
-      <section class="section reveal-group" id="experience">
-        <p class="eyebrow reveal">Field and operations</p>
-        <h2 class="reveal">A timeline of habitat restoration, municipal field data, and operational systems.</h2>
-        <div class="timeline" data-timeline>
-          <span class="timeline-base" aria-hidden="true"></span><span class="timeline-glow" aria-hidden="true"></span>
-          <article class="timeline-item reveal"><span class="timeline-dot" aria-hidden="true"></span><div class="timeline-content"><p class="date">April 2026-Present</p><h3>Environmental Restoration Technician</h3><p class="org">Stanley Park Ecology Society (DIRT) - Volunteer / Vancouver, BC</p><ul><li>Removed invasive species including herb robert, red campion, and smallflower balsam across Stanley Park habitat zones.</li><li>Applied native/invasive plant identification in active field conditions.</li><li>Supported site monitoring and habitat recovery tracking.</li></ul></div></article>
-          <article class="timeline-item reveal"><span class="timeline-dot" aria-hidden="true"></span><div class="timeline-content"><p class="date">May-July 2026</p><h3>Water Conservation Data Collection Specialist</h3><p class="org">Engaging Minds Consulting / Metro Vancouver</p><ul><li>Recommended a Google My Maps route-overlay solution, reducing navigation errors for 30 staff across 322 routes in 12 municipalities.</li><li>Recorded 200+ water restriction infractions via ArcGIS Survey123.</li><li>Performed large-scale field monitoring across municipalities.</li></ul></div></article>
-          <article class="timeline-item reveal"><span class="timeline-dot" aria-hidden="true"></span><div class="timeline-content"><p class="date">March 2020-June 2022</p><h3>Founder &amp; Operations Manager</h3><p class="org">E-commerce / Hong Kong</p><ul><li>Built Excel KPI dashboards for inventory, margin, and performance tracking.</li><li>Scaled operations from $300 to $15,000 USD.</li></ul></div></article>
-        </div>
-      </section>
-    </main>
-
-    <footer class="section footer reveal-group" id="contact">
-      <div class="contact-heading">
-        <p class="eyebrow">Contact</p>
-        <h2>Let's connect.</h2>
-        <p>Have a project in mind, a question, or an opportunity to collaborate? I'd love to hear from you.</p>
-      </div>
-      <div class="contact-panel">
+      <section class="section frame contact" id="contact" aria-labelledby="contact-title">
         <div class="contact-intro">
-          <h3>Let's build something meaningful.</h3>
-          <p>Let's talk field data, restoration, or practical environmental tools.</p>
-          <div class="contact-details">
-            <a href="mailto:geoffreylhk@gmail.com"><span>Email</span><span>geoffreylhk@gmail.com</span></a>
-            <a href="https://github.com/geoffreylhk" target="_blank" rel="noreferrer"><span>GitHub</span><span>github.com/geoffreylhk</span></a>
-            <a href="https://linkedin.com/in/geoffreyleehk" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>linkedin.com/in/geoffreyleehk</span></a>
-          </div>
-          <p class="contact-background">Simon Fraser University · Bachelor of Environment (B.Env), Resource and Environmental Management. Certified in WHMIS and TDG.</p>
+          <h2 id="contact-title">Let’s connect.</h2>
+          <p>Have a project, question, or opportunity in mind?</p>
+          <ul class="contact-details">
+            <li><a class="text-link" href="mailto:geoffreylhk@gmail.com">Email</a></li>
+            <li><a class="text-link" href="https://github.com/geoffreylhk">GitHub</a></li>
+            <li><a class="text-link" href="https://linkedin.com/in/geoffreyleehk">LinkedIn</a></li>
+          </ul>
         </div>
         <form class="contact-form" id="contact-form" action="https://formsubmit.co/geoffreylhk@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="New portfolio message" />
@@ -117,10 +180,16 @@
           <p class="contact-note">Delivered via <a href="https://formsubmit.co/" target="_blank" rel="noreferrer">FormSubmit</a>. Your email lets me reply to you.</p>
           <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
         </form>
-      </div>
-      <div class="footer-bottom reveal"><p>Geoffrey Hong Kei Lee / Vancouver, BC</p><div class="tag-row"><span class="pill muted">Environmental Scientist</span><span class="pill muted">Field Researcher</span><span class="pill muted">Developer</span></div></div>
-    </footer>
+      </section>
+    </main>
 
-    <script src="script.js"></script>
+    <footer class="site-footer frame">
+      <a class="brand" href="#top">
+        <img src="public/favicon.svg?v=3" width="42" height="42" alt="" />
+        <span>Geoffrey Hong Kei Lee<small>Vancouver, BC</small></span>
+      </a>
+      <p>© 2026 Geoffrey Hong Kei Lee</p>
+    </footer>
+    <script src="script.js" defer></script>
   </body>
 </html>

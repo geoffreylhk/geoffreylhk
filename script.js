@@ -1,4 +1,37 @@
-const nav=document.querySelector(".floating-nav");const hero=document.querySelector(".hero");const heroBg=document.querySelector(".hero-bg");const mouseGlow=document.querySelector(".mouse-glow");const timeline=document.querySelector("[data-timeline]");const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",e=>{const target=document.querySelector(a.getAttribute("href"));if(!target)return;e.preventDefault();target.scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"});window.history.pushState(null,"",a.getAttribute("href"))})});const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;const el=entry.target;el.classList.add("visible");if(el.classList.contains("reveal-group")){el.querySelectorAll(".reveal").forEach((child,index)=>{child.style.transitionDelay=`${index*70}ms`;child.classList.add("visible")})}if(el.classList.contains("stagger-tags")){el.classList.add("visible");el.querySelectorAll(".pill").forEach((pill,index)=>{pill.style.transitionDelay=`${index*45}ms`})}})},{threshold:.16});document.querySelectorAll(".reveal,.reveal-group,.stagger-tags").forEach(el=>observer.observe(el));function updateScrollEffects(){const y=window.scrollY;if(nav)nav.classList.toggle("visible",y>96);if(hero&&heroBg&&!reduced){const progress=Math.min(Math.max(y/hero.offsetHeight,0),1);heroBg.style.setProperty("--hero-y",`${progress*90}px`);heroBg.style.setProperty("--hero-scale",`${1.08+progress*.08}`)}if(timeline){const rect=timeline.getBoundingClientRect();const start=window.innerHeight*.72;const end=window.innerHeight*.42-rect.height;const progress=(start-rect.top)/(start-end);timeline.style.setProperty("--timeline-progress",Math.min(Math.max(progress,0),1).toString())}}window.addEventListener("scroll",updateScrollEffects,{passive:true});window.addEventListener("resize",updateScrollEffects);updateScrollEffects();if(hero&&mouseGlow&&!reduced){hero.addEventListener("mousemove",event=>{const rect=hero.getBoundingClientRect();const x=(event.clientX-rect.left-rect.width/2)/rect.width;const y=(event.clientY-rect.top-rect.height/2)/rect.height;mouseGlow.style.setProperty("--mouse-x",`${x*68}px`);mouseGlow.style.setProperty("--mouse-y",`${y*52}px`)});hero.addEventListener("mouseleave",()=>{mouseGlow.style.setProperty("--mouse-x","0px");mouseGlow.style.setProperty("--mouse-y","0px")})}document.querySelectorAll(".project-card").forEach(card=>{const inner=card.querySelector(".project-inner");if(!inner||reduced)return;card.addEventListener("mousemove",event=>{const rect=card.getBoundingClientRect();const px=(event.clientX-rect.left)/rect.width;const py=(event.clientY-rect.top)/rect.height;inner.style.setProperty("--tilt-x",`${(0.5-py)*12}deg`);inner.style.setProperty("--tilt-y",`${(px-0.5)*12}deg`);inner.style.setProperty("--glare-x",`${px*100}%`);inner.style.setProperty("--glare-y",`${py*100}%`)});card.addEventListener("mouseleave",()=>{inner.style.setProperty("--tilt-x","0deg");inner.style.setProperty("--tilt-y","0deg");inner.style.setProperty("--glare-x","50%");inner.style.setProperty("--glare-y","50%")})});
+(() => {
+  const journey = document.querySelector("#experience.journey");
+  if (!journey) return;
+
+  const tabs = Array.from(journey.querySelectorAll('.journey-tabs [role="tab"]'));
+  const panels = tabs.map(tab => document.getElementById(tab.getAttribute("aria-controls")));
+
+  function select(index, moveFocus = false) {
+    tabs.forEach((tab, i) => {
+      const active = i === index;
+      tab.setAttribute("aria-selected", String(active));
+      tab.tabIndex = active ? 0 : -1;
+      panels[i].hidden = !active;
+    });
+    if (moveFocus) tabs[index].focus();
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => select(index));
+    tab.addEventListener("keydown", event => {
+      let next;
+      switch (event.key) {
+        case "ArrowLeft": next = (index + tabs.length - 1) % tabs.length; break;
+        case "ArrowRight": next = (index + 1) % tabs.length; break;
+        case "Home": next = 0; break;
+        case "End": next = tabs.length - 1; break;
+        default: return;
+      }
+      event.preventDefault();
+      select(next, true);
+    });
+  });
+})();
+
 const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
   const status = document.querySelector("#contact-status");
