@@ -51,6 +51,23 @@
   });
 })();
 
+const heroContactLink = document.querySelector("#hero-contact-link");
+const contactSection = document.querySelector("#contact");
+const contactName = document.querySelector("#contact-name");
+if (heroContactLink && contactSection && contactName) {
+  heroContactLink.addEventListener("click", event => {
+    if (event.defaultPrevented || event.button !== 0 ||
+        event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    event.preventDefault();
+    if (location.hash !== heroContactLink.hash) {
+      history.pushState(null, "", heroContactLink.hash);
+    }
+    contactName.focus({ preventScroll: true });
+    contactSection.scrollIntoView();
+  });
+}
+
 const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
   const status = document.querySelector("#contact-status");

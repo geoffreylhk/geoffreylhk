@@ -46,11 +46,9 @@ p { text-wrap: pretty; }
 
 .hero { position: relative; isolation: isolate; display: grid; align-items: center; min-height: clamp(29rem, 51vw, 39rem); }
 .hero-content { position: relative; z-index: 1; padding-block: 4.25rem; max-width: 44rem; }
-.hero-name { margin-bottom: 1rem; font-weight: 650; font-size: clamp(1rem, 1.65vw, 1.2rem); }
 .hero h1 { font-size: clamp(2.7rem, 5vw, 4.25rem); letter-spacing: -.065em; line-height: 1; text-wrap: initial; }
 .hero-copy { max-width: 43ch; margin-top: 1.25rem; font-size: clamp(1.05rem, 1.85vw, 1.35rem); color: var(--muted); }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.35rem; margin-top: 1.75rem; }
-.hero-location { margin-top: 1.4rem; font-size: .9rem; color: var(--muted); }
 .hero-visual { position: absolute; inset: 0 0 0 39%; }
 .hero-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center 72%; }
 .hero-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--forest), #0c19137d 33%, transparent 75%), linear-gradient(0deg, var(--forest), transparent 23%); }
@@ -156,6 +154,11 @@ p { text-wrap: pretty; }
 .contact-field { display: grid; gap: .35rem; min-width: 0; }
 .contact-field label { font-weight: 600; font-size: .9rem; }
 .contact-field input, .contact-field textarea { width: 100%; border: 1px solid var(--rail); border-radius: .45rem; background: var(--field); color: var(--ink); padding: .7rem .8rem; }
+.contact-field :is(input, textarea):focus {
+  border-color: var(--fern);
+  outline: 2px solid var(--fern);
+  outline-offset: -2px;
+}
 .contact-field input::placeholder, .contact-field textarea::placeholder { color: #a8b8ab; }
 .contact-field textarea { resize: vertical; min-height: 8rem; }
 .contact-submit {
