@@ -62,8 +62,48 @@ p { text-wrap: pretty; }
 .hero + .section { padding-top: clamp(1.5rem, 4vw, 3.5rem); }
 .featured-project { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); align-items: center; gap: clamp(1.4rem, 4vw, 3.75rem); margin-top: 2rem; }
 .project-visual { position: relative; }
-.project-media { display: block; }
-.project-media img { width: 100%; height: auto; border-radius: .5rem; }
+.project-media { display: grid; isolation: isolate; overflow: hidden; border-radius: .5rem; }
+.project-slide { grid-area: 1 / 1; width: 100%; height: auto; opacity: 0; }
+.project-slide.is-previous { opacity: 1; }
+.project-slide.is-current { z-index: 1; opacity: 1; transition: opacity 900ms ease-in-out; }
+.project-controls { --dot-target: 44px; display: flex; justify-content: center; }
+.project-controls button {
+  display: grid;
+  place-items: center;
+  width: var(--dot-target);
+  height: var(--dot-target);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+}
+.project-controls button:hover, .project-dot[aria-current] { color: var(--fern); }
+.project-dots { position: relative; display: flex; }
+.project-dot::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.project-timer {
+  --timer-size: 11px;
+  --timer-inset: calc((var(--dot-target) - var(--timer-size)) / 2);
+  position: absolute;
+  inset-block-start: var(--timer-inset);
+  inset-inline-start: calc(var(--active-dot, 0) * var(--dot-target) + var(--timer-inset));
+  width: var(--timer-size);
+  height: var(--timer-size);
+  fill: none;
+  stroke-width: 2;
+  pointer-events: none;
+}
+.project-timer-track { stroke: var(--rail); }
+.project-timer-progress {
+  stroke: var(--fern);
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+.project-descriptions { display: grid; }
+.project-descriptions p { grid-area: 1 / 1; }
+.project-descriptions [aria-hidden="true"] { visibility: hidden; }
 .project-callout { display: none; pointer-events: none; }
 @media (min-width: 87.5rem) {
   .project-callout {
@@ -236,6 +276,7 @@ p { text-wrap: pretty; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .project-slide.is-current { transition: none; }
   .contact-submit, .contact-submit::before, .contact-submit-label, .contact-submit-arrow { transition: none; }
   .contact-submit:enabled:active { transform: none; }
   .journey-tabs button, .journey-tabs button::before { transition: none; }

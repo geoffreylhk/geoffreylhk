@@ -1,4 +1,86 @@
 (() => {
+  const preview = document.querySelector("#csr-preview");
+  if (!preview) return;
+
+  const media = preview.querySelector(".project-media");
+  const slides = [...media.querySelectorAll(".project-slide")];
+  const descriptions = [...preview.querySelectorAll(".project-descriptions p")];
+  const controls = preview.querySelector(".project-controls");
+  const dotGroup = controls.querySelector(".project-dots");
+  const dots = [...dotGroup.querySelectorAll(".project-dot")];
+  const ring = dotGroup.querySelector(".project-timer-progress");
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  let current = 0;
+  let inView = false;
+  let countdown;
+
+  function show(index) {
+    if (index === current) return;
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("is-previous", i === current && i !== index);
+      slide.classList.toggle("is-current", i === index);
+      slide.setAttribute("aria-hidden", String(i !== index));
+      descriptions[i].setAttribute("aria-hidden", String(i !== index));
+    });
+    dots[current].removeAttribute("aria-current");
+    dots[index].setAttribute("aria-current", "true");
+    dotGroup.style.setProperty("--active-dot", index);
+    current = index;
+  }
+
+  function resetCountdown() {
+    countdown?.cancel();
+    countdown = null;
+  }
+
+  function syncCountdown() {
+    if (!inView || document.hidden || reducedMotion.matches) {
+      resetCountdown();
+      return;
+    }
+    if (media.matches(":focus-visible")) {
+      countdown?.pause();
+      return;
+    }
+    if (countdown) {
+      countdown.play();
+      return;
+    }
+
+    const animation = ring.animate(
+      [{ strokeDashoffset: "100" }, { strokeDashoffset: "0" }],
+      { duration: 5000, fill: "forwards" }
+    );
+    countdown = animation;
+    animation.onfinish = () => {
+      if (countdown !== animation) return;
+      resetCountdown();
+      if (!inView || document.hidden || reducedMotion.matches || media.matches(":focus-visible")) return;
+      show((current + 1) % slides.length);
+      syncCountdown();
+    };
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      show(index);
+      resetCountdown();
+      syncCountdown();
+    });
+  });
+  media.addEventListener("focus", syncCountdown);
+  media.addEventListener("blur", syncCountdown);
+  reducedMotion.addEventListener("change", syncCountdown);
+  document.addEventListener("visibilitychange", syncCountdown);
+  new IntersectionObserver(([entry]) => {
+    inView = entry.intersectionRatio >= 0.4;
+    syncCountdown();
+  }, { threshold: 0.4 }).observe(media);
+  controls.hidden = false;
+})();
+
+(() => {
   const journey = document.querySelector("#experience.journey");
   if (!journey) return;
 

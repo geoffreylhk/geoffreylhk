@@ -59,16 +59,36 @@
 
       <section class="section frame work" id="projects" aria-labelledby="work-title">
         <h2 id="work-title">My work</h2>
-        <article class="featured-project">
+        <article class="featured-project" id="csr-preview" aria-labelledby="csr-preview-title">
           <div class="project-visual">
             <a class="project-media" href="https://bccsrtool.ca/" aria-label="Open the BC CSR Tool">
-              <img src="public/portfolio/bc-csr-tool.webp" width="1600" height="860" alt="BC CSR Screening Tool home screen showing the four assessment steps" />
+              <img class="project-slide is-current" src="public/portfolio/bc-csr-tool-home.jpg" width="1920" height="914" alt="BC CSR Screening Tool home screen showing the four assessment steps" />
+              <img class="project-slide" src="public/portfolio/bc-csr-tool-site-info.jpg" width="1920" height="914" loading="lazy" aria-hidden="true" alt="Site Information form with land use and soil factor selections" />
+              <img class="project-slide" src="public/portfolio/bc-csr-tool-contaminants.jpg" width="1920" height="914" loading="lazy" aria-hidden="true" alt="Searchable contaminant catalogue with three compounds selected" />
+              <img class="project-slide" src="public/portfolio/bc-csr-tool-results.jpg" width="1920" height="914" loading="lazy" aria-hidden="true" alt="Site summary and threshold comparison showing one exceedance" />
             </a>
             <img class="project-callout" src="public/portfolio/click-me-arrow.png" width="1024" height="700" alt="" loading="lazy" />
+            <div class="project-controls" hidden>
+              <div class="project-dots" role="group" aria-label="BC CSR Tool slides">
+                <svg class="project-timer" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle class="project-timer-track" cx="12" cy="12" r="10" />
+                  <circle class="project-timer-progress" cx="12" cy="12" r="10" pathLength="100" />
+                </svg>
+                <button class="project-dot" type="button" aria-label="Homepage" aria-current="true"></button>
+                <button class="project-dot" type="button" aria-label="Site information"></button>
+                <button class="project-dot" type="button" aria-label="Contaminants"></button>
+                <button class="project-dot" type="button" aria-label="Results"></button>
+              </div>
+            </div>
           </div>
           <div class="project-copy">
-            <h3>BC CSR Tool</h3>
-            <p>A screening tool that compares soil and groundwater lab results against BC CSR Schedule 3.1 thresholds.</p>
+            <h3 id="csr-preview-title">BC CSR Tool</h3>
+            <div class="project-descriptions">
+              <p>A screening tool that compares soil and groundwater lab results against BC CSR Schedule 3.1 thresholds.</p>
+              <p aria-hidden="true">Choose the current or proposed land use and mark the soil factors that apply. The tool uses those choices to determine which thresholds to compare against.</p>
+              <p aria-hidden="true">Search for contaminants by name or CAS number. The compounds you select carry over to the lab data step.</p>
+              <p aria-hidden="true">Compare each measured concentration with its applicable threshold. The site summary flags exceedances and identifies the factors behind them.</p>
+            </div>
             <p class="project-meta">Environmental assessment · Web development</p>
           </div>
         </article>
