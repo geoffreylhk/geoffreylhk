@@ -397,18 +397,22 @@ html:has(.pdf-preview[open]) { overflow: hidden; }
 
 @media (max-width: 760px) {
   .hero { min-height: 0; }
-  .hero-content { padding-block: 3.5rem 0; }
-  .hero-visual { position: relative; inset: auto; height: clamp(13rem, 55vw, 22rem); margin-top: 1.15rem; }
-  .hero-visual::after { background: linear-gradient(0deg,var(--forest),transparent 25%), linear-gradient(180deg,var(--forest),transparent 18%); }
+  .hero-content { padding-block: 2.5rem 3rem; }
+  .hero-visual { inset-inline-start: 27%; }
+  .hero-visual::after {
+    background: linear-gradient(90deg, var(--forest), #0c1913cc 34%, #0c191344 100%),
+      linear-gradient(180deg, var(--forest), transparent 25%, transparent 65%, var(--forest));
+  }
   .featured-project, .contact { grid-template-columns: 1fr; }
-  .featured-project { align-items: start; }
+  .featured-project { align-items: start; gap: .9rem; }
+  .project-copy { display: contents; }
+  .project-copy h3 { grid-row: 1; }
 }
 @media (max-width: 540px) {
   .site-nav { align-items: flex-start; flex-direction: column; gap: 0; padding-block: .6rem .12rem; }
   .site-nav .brand img { width: 32px; height: 32px; }
   .nav-links { justify-content: space-between; width: 100%; gap: 0 .5rem; }
   .section, .capabilities, #csr-preview, .work-coverflow { scroll-margin-top: 6.25rem; }
-  .hero-content { padding-top: 2.75rem; }
   .hero h1 { font-size: clamp(2.25rem, 10vw, 3.3rem); }
   .contact-fields { grid-template-columns: 1fr; }
   .work-coverflow.is-ready .coverflow-stage { --coverflow-card-width: min(20.625rem, calc(100% - 5rem)); }
