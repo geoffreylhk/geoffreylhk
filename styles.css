@@ -62,6 +62,7 @@ p { text-wrap: pretty; }
 .hero + .section { padding-top: clamp(1.5rem, 4vw, 3.5rem); }
 .featured-project { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); align-items: center; gap: clamp(1.4rem, 4vw, 3.75rem); margin-top: 2rem; }
 .project-visual { position: relative; }
+#csr-preview { scroll-margin-top: 5rem; }
 .project-media { display: grid; isolation: isolate; overflow: hidden; border-radius: .5rem; }
 .project-slide { grid-area: 1 / 1; width: 100%; height: auto; opacity: 0; }
 .project-slide.is-previous { opacity: 1; }
@@ -182,6 +183,9 @@ p { text-wrap: pretty; }
 .journey-logo { flex: 0 0 auto; width: 50px; height: 32px; object-fit: contain; object-position: left center; }
 
 .about p, .contact-intro p { margin-top: 1rem; color: var(--muted); max-width: 55ch; }
+.about .about-bio { max-width: 82ch; }
+.about-project-link { display: inline-flex; align-items: center; gap: .3em; color: var(--fern); }
+.about-project-link img { width: 1.2em; height: 1.2em; border-radius: 50%; }
 .capabilities { display: flex; flex-wrap: wrap; gap: .4rem 1rem; padding: 0; list-style: none; margin-top: 1.25rem; color: var(--fern); font-size: .875rem; font-weight: 600; scroll-margin-top: 6rem; }
 
 .contact { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: clamp(1.75rem, 5.5vw, 5rem); }
@@ -265,7 +269,7 @@ p { text-wrap: pretty; }
   .site-nav { align-items: flex-start; flex-direction: column; gap: 0; padding-block: .6rem .12rem; }
   .site-nav .brand img { width: 32px; height: 32px; }
   .nav-links { justify-content: space-between; width: 100%; gap: 0 .5rem; }
-  .section, .capabilities { scroll-margin-top: 6.25rem; }
+  .section, .capabilities, #csr-preview { scroll-margin-top: 6.25rem; }
   .hero-content { padding-top: 2.75rem; }
   .hero h1 { font-size: clamp(2.25rem, 10vw, 3.3rem); }
   .supporting-projects, .contact-fields { grid-template-columns: 1fr; }
