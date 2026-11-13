@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=pdf-preview-pill" />
     <title>Geoffrey Hong Kei Lee</title>
   </head>
   <body id="top">
@@ -96,28 +96,82 @@
           </div>
         </article>
 
-        <div class="supporting-projects">
-          <article>
-            <img class="supporting-image" src="public/portfolio/esa-placeholder.webp" width="768" height="512" loading="lazy" alt="" />
-            <h3>Phase I ESA</h3>
-            <p>Reconstructed the history of a brownfield site, mapped areas of potential environmental concern, and developed a conceptual site model.</p>
-            <p class="project-meta">Environmental assessment · GIS</p>
-          </article>
-          <article>
-            <img class="supporting-image" src="public/portfolio/salmon-placeholder.webp" width="768" height="512" loading="lazy" alt="" />
-            <h3>Salmon modelling</h3>
-            <p>Used 40 years of Pacific salmon data to model population responses across dam and habitat scenarios.</p>
-            <p class="project-meta">Resource management · Modelling</p>
-          </article>
-        </div>
+        <section class="work-coverflow" id="more-projects" aria-labelledby="more-projects-title">
+          <h3 id="more-projects-title">More projects</h3>
+          <div class="coverflow-stage" id="coverflow-stage">
+            <div class="coverflow-ambience" aria-hidden="true"></div>
+            <article class="coverflow-card">
+              <img src="public/portfolio/project-phase-i-esa.png" width="849" height="1200" loading="lazy" alt="" draggable="false" />
+              <div class="coverflow-copy">
+                <h4>Phase I Environmental Site Assessment</h4>
+                <p class="coverflow-category">Environmental assessment · GIS</p>
+                <p>Reviewed historical aerial imagery to identify areas of potential concern at a former fuel station and recommend where to sample in a Phase II investigation.</p>
+              </div>
+            </article>
+            <article class="coverflow-card">
+              <a class="coverflow-pdf" href="public/portfolio/pdfs/green-aviation.pdf" data-pages="30" draggable="false" aria-label="Preview Willingness to Pay for Green Aviation PDF">
+                <img src="public/portfolio/project-green-aviation.png" width="928" height="1200" loading="lazy" alt="" draggable="false" />
+              </a>
+              <div class="coverflow-copy">
+                <h4>Willingness to Pay for Green Aviation</h4>
+                <p class="coverflow-category">Research · Meta-analysis</p>
+                <p>Co-authored a meta-analysis of 17 international studies on what passengers would pay for sustainable aviation fuel and carbon offsets.</p>
+              </div>
+            </article>
+            <article class="coverflow-card">
+              <a class="coverflow-pdf" href="public/portfolio/pdfs/bisphenol-a.pdf" data-pages="12" draggable="false" aria-label="Preview Bisphenol A Risk Assessment PDF">
+                <img src="public/portfolio/project-bisphenol-a.png" width="1200" height="675" loading="lazy" alt="" draggable="false" />
+              </a>
+              <div class="coverflow-copy">
+                <h4>Bisphenol A Risk Assessment</h4>
+                <p class="coverflow-category">Human health risk assessment</p>
+                <p>Used urinary biomonitoring data from Canada and the U.S. to estimate adult BPA exposure and compare it with health benchmarks.</p>
+              </div>
+            </article>
+            <article class="coverflow-card">
+              <a class="coverflow-pdf" href="public/portfolio/pdfs/salmon-modelling.pdf" data-pages="14" draggable="false" aria-label="Preview Pacific Salmon Modelling PDF">
+                <img src="public/portfolio/project-salmon-modelling.png" width="849" height="1200" loading="lazy" alt="" draggable="false" />
+              </a>
+              <div class="coverflow-copy">
+                <h4>Pacific Salmon Modelling</h4>
+                <p class="coverflow-category">Fisheries · Population modelling</p>
+                <p>Modelled how hypothetical dam impacts could affect sockeye salmon populations and maximum sustainable yield in British Columbia.</p>
+              </div>
+            </article>
+            <article class="coverflow-card">
+              <a class="coverflow-pdf" href="public/portfolio/pdfs/south-granville.pdf" data-pages="61" draggable="false" aria-label="Preview South Granville Pedestrian Connections PDF">
+                <img src="public/portfolio/project-south-granville.png" width="850" height="1200" loading="lazy" alt="" draggable="false" />
+              </a>
+              <div class="coverflow-copy">
+                <h4>South Granville Pedestrian Connections</h4>
+                <p class="coverflow-category">Urban design · Transit access</p>
+                <p>Co-developed proposals for safer, more welcoming pedestrian routes for young teens around South Granville SkyTrain Station.</p>
+              </div>
+            </article>
+            <article class="coverflow-card">
+              <a class="coverflow-pdf" href="public/portfolio/pdfs/ecommerce-spreadsheet.pdf" data-pages="3" draggable="false" aria-label="Preview E-commerce Trading Dashboard PDF">
+                <img src="public/portfolio/project-ecommerce-spreadsheet.png" width="1200" height="928" loading="lazy" alt="" draggable="false" />
+              </a>
+              <div class="coverflow-copy">
+                <h4>E-commerce Trading Dashboard</h4>
+                <p class="coverflow-category">Excel · Business analytics</p>
+                <p>Built a spreadsheet to track trades, monitor profit and returns over time, and compare sales by item category.</p>
+              </div>
+            </article>
+            <button class="coverflow-arrow coverflow-previous" type="button" aria-label="Previous project" aria-controls="coverflow-stage" hidden><span aria-hidden="true"></span></button>
+            <button class="coverflow-arrow coverflow-next" type="button" aria-label="Next project" aria-controls="coverflow-stage" hidden><span aria-hidden="true"></span></button>
+          </div>
+          <div class="coverflow-dots" role="group" aria-label="Choose a project" hidden></div>
+          <p class="coverflow-status" aria-live="polite" aria-atomic="true"></p>
+        </section>
       </section>
 
       <section class="section frame journey" id="experience" aria-labelledby="journey-title">
         <header class="journey-heading">
           <h2 id="journey-title">Qualifications</h2>
           <div class="journey-tabs" role="tablist" aria-label="Journey timeline">
-            <button type="button" role="tab" id="journey-education-tab" aria-controls="journey-education" aria-selected="false" tabindex="-1"><svg class="journey-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9.5 12 5l10 4.5-10 4.5L2 9.5Z"/><path d="M6 11.4v4.8c2.8 2.5 9.2 2.5 12 0v-4.8M22 10v5"/></svg>Education</button>
-            <button type="button" role="tab" id="journey-experience-tab" aria-controls="journey-experience" aria-selected="true" tabindex="0"><svg class="journey-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18m-11 0v2h4v-2"/></svg>Experience</button>
+            <button class="fill-pill" type="button" role="tab" id="journey-education-tab" aria-controls="journey-education" aria-selected="false" tabindex="-1"><svg class="journey-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9.5 12 5l10 4.5-10 4.5L2 9.5Z"/><path d="M6 11.4v4.8c2.8 2.5 9.2 2.5 12 0v-4.8M22 10v5"/></svg>Education</button>
+            <button class="fill-pill" type="button" role="tab" id="journey-experience-tab" aria-controls="journey-experience" aria-selected="true" tabindex="0"><svg class="journey-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18m-11 0v2h4v-2"/></svg>Experience</button>
           </div>
         </header>
         <div id="journey-experience" role="tabpanel" tabindex="0" aria-labelledby="journey-experience-tab">
@@ -217,6 +271,16 @@
       </section>
     </main>
 
+    <dialog class="pdf-preview" id="project-pdf-preview" aria-labelledby="project-pdf-title">
+      <div class="pdf-preview-toolbar">
+        <h2 id="project-pdf-title">Project PDF</h2>
+        <form method="dialog">
+          <button class="fill-pill" type="submit" autofocus>Close</button>
+        </form>
+      </div>
+      <div class="pdf-preview-pages" role="region" aria-label="PDF pages" tabindex="0"></div>
+    </dialog>
+
     <footer class="site-footer frame">
       <a class="brand" href="#top">
         <img src="public/favicon.svg?v=3" width="42" height="42" alt="" />
@@ -224,6 +288,6 @@
       </a>
       <p>© 2026 Geoffrey Hong Kei Lee</p>
     </footer>
-    <script src="script.js" defer></script>
+    <script src="script.js?v=pdf-preview-pill" defer></script>
   </body>
 </html>
